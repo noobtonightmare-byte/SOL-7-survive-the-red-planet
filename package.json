@@ -1,0 +1,34 @@
+{
+  "name": "sol-7",
+  "version": "1.0.0",
+  "description": "SOL-7",
+  "author": "M.Huraira",
+  "main": "main.js",
+  "scripts": {
+    "vendor": "node scripts/vendor-three.js",
+    "prestart": "npm run vendor",
+    "start": "electron .",
+    "prebuild": "npm run vendor",
+    "build": "electron-builder --win"
+  },
+  "build": {
+    "appId": "com.huraira.sol7",
+    "productName": "SOL-7",
+    "directories": { "output": "dist" },
+    "files": [
+      "**/*",
+      "!dist/**/*",
+      "!**/*.patch"
+    ],
+    "win": {
+      "target": ["portable"]
+    }
+  },
+  "dependencies": {
+    "three": "^0.170.0"
+  },
+  "devDependencies": {
+    "electron": "^45.2.3",
+    "electron-builder": "^26.18.0"
+  }
+}

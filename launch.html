@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html><head><meta charset="utf-8"><title>SOL 7</title>
+<style>
+html,body{margin:0;height:100%;background:#000;overflow:hidden;font-family:"Segoe UI",Arial,sans-serif;color:#fff;user-select:none}
+canvas{display:block}
+#prompt{position:fixed;left:50%;bottom:11%;transform:translateX(-50%);padding:14px 30px;font-size:26px;letter-spacing:3px;background:rgba(0,0,0,.45);border:1px solid rgba(255,255,255,.35);border-radius:6px;transition:opacity 1s;animation:blink 1.6s infinite}
+#prompt b{color:#ffb347;border:2px solid #ffb347;padding:0 10px;border-radius:4px;margin:0 4px}
+#prompt small{display:block;font-size:12px;opacity:.6;letter-spacing:2px;margin-top:6px;text-align:center}
+@keyframes blink{50%{box-shadow:0 0 22px rgba(255,179,71,.55)}}
+#count{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;font-size:22vh;font-weight:200;letter-spacing:6px;text-shadow:0 0 40px rgba(255,160,60,.9),0 0 8px #fff;pointer-events:none;opacity:0}
+#count.p{animation:pulse 1s ease-out forwards}
+#count.go{font-size:14vh;font-weight:600;color:#ffd9a0;animation:pulseGo 2.4s ease-out forwards}
+@keyframes pulseGo{0%{transform:scale(1.9);opacity:0}10%{opacity:1}65%{opacity:1}100%{transform:scale(1);opacity:0}}
+@keyframes pulse{0%{transform:scale(1.9);opacity:0}12%{opacity:1}100%{transform:scale(1);opacity:.9}}
+#clock{position:fixed;left:28px;top:22px;font:600 22px Consolas,monospace;letter-spacing:3px;opacity:0;transition:opacity .8s;text-shadow:0 0 8px #000}
+#tel{position:fixed;left:28px;bottom:24px;font:15px Consolas,monospace;letter-spacing:2px;line-height:1.6;opacity:0;transition:opacity .8s;text-shadow:0 0 6px #000}
+#cap{position:fixed;left:50%;bottom:21%;transform:translateX(-50%);font-size:20px;letter-spacing:6px;opacity:0;transition:opacity .6s;text-shadow:0 0 10px #000}
+#sub{position:fixed;left:50%;bottom:5%;transform:translateX(-50%);width:min(860px,70vw);box-sizing:border-box;padding:11px 20px 13px;background:rgba(6,10,18,.74);border-left:4px solid #ffb347;border-radius:4px;opacity:0;transition:opacity .55s;pointer-events:none;box-shadow:0 4px 24px rgba(0,0,0,.55)}
+body:has(#bp-pill.on) #sub{bottom:128px;width:min(900px,62vw);padding:9px 18px 11px;transition:opacity .55s,bottom .3s}
+body:has(#bp-pill.on) #subt{font-size:clamp(13px,1.25vw,17px);line-height:1.4}
+#subg{display:block;font-size:11px;font-weight:700;letter-spacing:3px;color:#ffb347;margin-bottom:5px}
+#subt{display:block;font-size:clamp(14px,1.5vw,19px);line-height:1.45;color:#f2f5fa;text-shadow:0 1px 3px #000}
+#fade{position:fixed;inset:0;background:#000;opacity:1;transition:opacity 3s;pointer-events:none}
+#end{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;font-size:18px;letter-spacing:5px;opacity:0;transition:opacity 2s;pointer-events:none}
+</style></head>
+<body>
+<div id="prompt">Press <b>[W]</b> to Walk Forward<small>CLICK TO ENABLE MOUSE LOOK</small></div>
+<div id="count"></div><div id="clock"></div><div id="tel"></div><div id="cap"></div>
+<div id="sub"><span id="subg">NASA FACT</span><span id="subt"></span></div>
+<div id="fade"></div><div id="end">PRESS R TO REPLAY</div>
+<script type="importmap">{"imports":{"three":"./vendor/three/build/three.module.js","three/addons/":"./vendor/three/addons/"}}</script>
+<script src="save.js"></script>
+<script src="menu.js"></script>
+<script src="loading.js"></script>
+</body></html>
