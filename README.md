@@ -7,6 +7,15 @@
 Launch from Earth, fly the retro-propulsive landing yourself, then survive on the Martian surface: salvage the lander, melt ice for water, break rocks for minerals, craft tools, build a research base and grow potatoes in the greenhouse. Ride out a dust storm and a meteor shower, restore power, unlock the data chips from Mission Control, and program your capsule to fly you home. There is no rescue ship: you get yourself back to Earth.
 
 ---
+## Play
+
+*In your browser (no install):* [WEB LINK] https://noobtonightmare-byte.github.io/SOL-7-survive-the-red-planet/
+Use a desktop browser such as Chrome or Edge. Lower your volume before launch, because it is loud.
+
+*Windows app:* download the .exe from the Releases page.
+
+*Run locally:* npm install, then npm start
+---
 
 ## Gameplay at a glance
 
@@ -103,3 +112,7 @@ Built for the NASA Space Apps Challenge. The in-game agency is the fictional HMS
 ## License
 
 Add a license before making the repository public (e.g. MIT). Note that NASA media has its own usage guidelines.
+---
+## Links
+[Web Link] https://noobtonightmare-byte.github.io/SOL-7-survive-the-red-planet/
+[.Exe Link] https://github.com/noobtonightmare-byte/SOL-7-survive-the-red-planet/releases/tag/v1.0.0
