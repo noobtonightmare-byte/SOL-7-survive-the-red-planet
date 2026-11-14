@@ -1,6 +1,6 @@
 # SOL 7 — Mars Survival Trainer
 
-> A first-person, browser/desktop Mars survival game built for the **NASA Space Apps Challenge** — *Build a Junior Astronaut Mission Trainer*.
+> A first-person, desktop Mars survival game built for the **NASA Space Apps Challenge** — *Build a Junior Astronaut Mission Trainer*.
 
 **Team Sehnsucht** · Code & engine: **Huraira** · Science & design: **Meerab**
 
