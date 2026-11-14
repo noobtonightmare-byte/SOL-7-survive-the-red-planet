@@ -85,33 +85,6 @@ Scientific terms (sol, RTG, MOXIE and others) are explained in the in-game subti
 | `farm.js` | Greenhouse potato farm |
 | `daynight.js` / `nightsky.js` | Day/night cycle, Sol 2-7 events, data chips, return capsule, night sky and moons |
 
-## Getting started
-
-**Requirements:** a recent [Node.js](https://nodejs.org/) LTS and a GPU with WebGL 2 support.
-
-```bash
-git clone <your-repo-url>
-cd <repo-folder>
-npm install
-npm start          # copies Three.js to ./vendor, then launches the Electron app
-```
-
-### Build a Windows executable
-
-```bash
-npm run build      # outputs a portable .exe to ./dist
-```
-
-### Run in the browser
-
-`launch.html` uses ES modules, so it must be served over HTTP (opening the file directly will not work):
-
-```bash
-npm run vendor
-npx serve .
-# open http://localhost:3000/launch.html
-```
-
 ## Settings
 
 Press `Esc` in-game for music volume, sound volume, rendering quality (Low → Ultra) and gamma. Settings are saved in `localStorage`. **Lower your volume before launch — it is loud!**
