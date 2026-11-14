@@ -36,7 +36,6 @@ SOL 7 uses real NASA mission facts and published figures. No NASA images, 3D mod
 * **Art:** All 3D models, terrain, textures, skies, moons, the loading-screen slideshow and UI are generated procedurally in code. No third-party art files are used.
 * **Audio:** Music and ambience are synthesized in real time (Web Audio). No audio files or samples are used.
 * **Fonts:** System fonts only (Segoe UI, Consolas, Impact, Arial).
-* **Optional images:** If you add your own photos to `assets/loading/`, list their sources and licenses here.
 
 ---
 
