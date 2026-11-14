@@ -6,15 +6,15 @@
 
 ---
 
-## 1. NASA Public Data & Scientific References
+## 1. NASA Open Data & Scientific Sources
 
-SOL 7 uses real NASA mission facts and published figures. No NASA images, 3D models or video files are bundled with the game.
+In the game, the agency is the fictional **HMSA (Huraira Meerab Space Agency)**, and the NASA name is not used in-game. SOL 7 is a scripted game, but its values are taken from real NASA data. The numbers were collected from the sources below and built into the game as static reference data. The game makes no live API calls, and nothing here is presented as live. No NASA images, 3D models or video files are bundled.
 
-* **Mars surface science:** Martian gravity (3.71 m/s²), planetary radius, and the Jezero Crater landing site, based on NASA Mars mission data.
-* **Rover & orbiter instruments:** Base telemetry screens are modelled on REMS-style surface weather and MAVEN-style atmosphere readouts (Curiosity, Perseverance, MAVEN).
-* **MOXIE:** The oxygen-production mechanic is based on NASA's Mars Oxygen In-Situ Resource Utilization Experiment on Perseverance.
-* **Phobos and Deimos:** Moon sizes (about 27×22×18 km and 15×12×11 km) and apparent sky sizes follow NASA-published values.
-* **In-game "NASA FACT" captions:** Short facts written by the team from NASA public information.
+* **NASA DONKI (Space Weather Database):** space weather, solar activity, SPEs and CMEs, used to set radiation and space-weather values (Public Domain / NASA Open Data).
+* **NASA Open Science Data Repository (OSDR):** radiation dosimetry and space plant biology, used for radiation and greenhouse crop values (Public Domain / NASA Open Data).
+* **NASA Mars Trek and rover data (REMS / MEDA):** surface weather, atmospheric pressure, and Jezero Crater terrain (Public Domain / NASA Open Data).
+* **Mars mission facts:** Martian gravity (3.71 m/s²) and planetary radius; MOXIE oxygen production on Perseverance; MAVEN atmosphere readouts; Phobos and Deimos sizes (about 27×22×18 km and 15×12×11 km).
+* **In-game fact captions and subtitles (shown as HMSA facts):** short facts written by the team from NASA public information.
 
 > NASA content is generally not subject to copyright in the United States. This project is independent and is not endorsed by NASA.
 
@@ -36,6 +36,7 @@ SOL 7 uses real NASA mission facts and published figures. No NASA images, 3D mod
 * **Art:** All 3D models, terrain, textures, skies, moons, the loading-screen slideshow and UI are generated procedurally in code. No third-party art files are used.
 * **Audio:** Music and ambience are synthesized in real time (Web Audio). No audio files or samples are used.
 * **Fonts:** System fonts only (Segoe UI, Consolas, Impact, Arial).
+* **Optional images:** If you add your own photos to `assets/loading/`, list their sources and licenses here.
 
 ---
 
