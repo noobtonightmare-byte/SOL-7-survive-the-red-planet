@@ -1,33 +1,34 @@
-[README.md](https://github.com/user-attachments/files/34851392/README.md)
 # SOL 7 — Mars Survival Trainer
 
 > A first-person, browser/desktop Mars survival game built for the **NASA Space Apps Challenge** — *Build a Junior Astronaut Mission Trainer*.
 
 **Team Sehnsucht** · Code & engine: **Huraira** · Science & design: **Meerab**
 
-Launch from Earth, fly the retro-propulsive landing yourself, then survive on the Martian surface: melt ice for water, break rocks for minerals, craft tools, build a research base, grow potatoes in the greenhouse, and keep the crew alive through dust storms, solar flares and equipment failures until the supply ship arrives on **Sol 30**.
+Launch from Earth, fly the retro-propulsive landing yourself, then survive on the Martian surface: salvage the lander, melt ice for water, break rocks for minerals, craft tools, build a research base and grow potatoes in the greenhouse. Ride out a dust storm and a meteor shower, restore power, unlock the data chips from Mission Control, and program your capsule to fly you home. There is no rescue ship: you get yourself back to Earth.
 
 ---
 
 ## Gameplay at a glance
 
-1. **Launch** — countdown, ascent and a cinematic trip to Mars with NASA fact captions.
-2. **Landing** — fly the lander yourself (thrust, tilt, fine RCS). Crash and retry.
-3. **Sol 1: Arrival & Salvage** — salvage the descent stage, melt ice into drinking water, break rocks, deploy a crafting table and build the base from a blueprint hologram.
-4. **Sols 2–30: Campaign** — one unique event per Sol, each with station objectives:
+SOL 7 takes place over seven Sols on Mars. Every Sol is a new problem, and every fix costs something.
 
-   | Sols | Examples |
-   |------|----------|
-   | 2–4  | Dust-storm damage, storm pre-warning, global isolation storm |
-   | 5–9  | Pressure leak, crop blight, battery overload, seismic tremor, filter clog |
-   | 10–18 | Comms alignment, rover battery, drone scouting, O₂ tank drift, solar flare, hydroponic yield |
-   | 19–28 | Second storm, comms outage, biomass power, long rover traverse, deep ice drill, MOXIE output |
-   | 29–30 | Final preparations and Mission Day |
+| Sol | What happens |
+|-----|--------------|
+| 1 | Arrival and salvage: recover supplies, melt ice, break rocks, craft a table, build the base from a blueprint hologram |
+| 2 | Storm damage: the dust storm hits the solar panels |
+| 3 | The long night: survive an EVA in the cold |
+| 4 | Isolation storm: a global dust storm blocks the sun |
+| 5 | Meteor shower |
+| 6 | Going home: get the data chips from Mission Control, power the capsule through an RTG and cable |
+| 7 | Launch day: load the last data chip, program the capsule and fly home |
 
-5. **Day / night** — each Sol is ~5 minutes of daylight. At night, stay **inside** the base for 25 s to reach dawn; outside, you freeze.
-6. **Win** — complete Sol 30 and the supply ship is on its way.
+1. **Launch**: countdown, ascent and the trip to Mars with in-game fact captions.
+2. **Landing**: fly the lander yourself (thrust, tilt, fine RCS). Crash and retry.
+3. **Survive**: oxygen, water, food, power and radiation all pull on each other.
+4. **Day and night**: each Sol is about 5 minutes of daylight. At night, stay inside the base or you freeze.
+5. **Go home**: unlock the data chips, charge the capsule, program it and launch.
 
-Keep an eye on **oxygen, water, food, base power, health and radiation** — warnings fire below 25%.
+Scientific terms (sol, RTG, MOXIE and others) are explained in the in-game subtitles as you meet them.
 
 ## Controls
 
@@ -42,7 +43,7 @@ Keep an eye on **oxygen, water, food, base power, health and radiation** — war
 | `Tab` / `B` | Backpack (15 stacks, 4-slot hotbar, `1`–`4` to assign) |
 | `Left-click` | Swing hammer / hold to weld with the torch |
 | `N` | Show / hide base blueprint hologram |
-| `M` | Cycle NASA night-sky facts |
+| `M` | Cycle night-sky facts |
 | `R` | Retry (landing, or after death) · `Shift+R` resets the base phase |
 | `Esc` | Pause menu (music / sound volume, rendering quality, gamma) |
 
@@ -53,10 +54,12 @@ Keep an eye on **oxygen, water, food, base power, health and radiation** — war
 - **MOXIE**-style oxygen production, solar power, dust storms and battery management
 - Greenhouse potato farming with watering and nitrate-rich soil (plant-science mechanics)
 - Realistic **Phobos and Deimos** (true sizes and angular diameters), Milky Way and meteor showers
-- Radiation / solar-flare events and in-game NASA fact captions
+- Radiation, RTG power, and in-game fact captions
 - Base telemetry screens (weather, power, comms, life support) with REMS/MAVEN-style readouts
 
-> **Data & credits:** list every NASA dataset, image or fact source used here (e.g. NASA 3D Resources, NASA Trek, Perseverance/Curiosity weather logs, ECLSS consumption figures, DONKI, OSDR). See `credits.md`.
+> **In-game agency:** In the game, the space agency is the fictional **HMSA (Huraira Meerab Space Agency)**. The values behind the game come from real public space-science data, and every source is credited in `credits.md`.
+>
+> **Data & credits:** Data sources are listed in full See `credits.md`.
 
 ## Tech stack
 
@@ -80,5 +83,50 @@ Keep an eye on **oxygen, water, food, base power, health and radiation** — war
 | `crafting.js` | Crafting table, recipes, blueprint hologram, welding torch |
 | `base.js` / `basebuild.js` / `basescreens.js` | Base state machine, geometry, telemetry screens |
 | `farm.js` | Greenhouse potato farm |
-| `daynight.js` / `nightsky.js` | Day/night cycle, Sol counter, night survival, night sky and moons |
+| `daynight.js` / `nightsky.js` | Day/night cycle, Sol 2-7 events, data chips, return capsule, night sky and moons |
 
+## Getting started
+
+**Requirements:** a recent [Node.js](https://nodejs.org/) LTS and a GPU with WebGL 2 support.
+
+```bash
+git clone <your-repo-url>
+cd <repo-folder>
+npm install
+npm start          # copies Three.js to ./vendor, then launches the Electron app
+```
+
+### Build a Windows executable
+
+```bash
+npm run build      # outputs a portable .exe to ./dist
+```
+
+### Run in the browser
+
+`launch.html` uses ES modules, so it must be served over HTTP (opening the file directly will not work):
+
+```bash
+npm run vendor
+npx serve .
+# open http://localhost:3000/launch.html
+```
+
+## Settings
+
+Press `Esc` in-game for music volume, sound volume, rendering quality (Low → Ultra) and gamma. Settings are saved in `localStorage`. **Lower your volume before launch — it is loud!**
+
+## Team
+
+| Name | Role |
+|------|------|
+| Huraira | Code and engine |
+| Meerab | Science, biological mechanics, narrative, UI structure and presentation |
+
+## Acknowledgements
+
+Built for the NASA Space Apps Challenge. The in-game agency is the fictional HMSA. Real space-science data comes from public NASA sources, credited in `credits.md`. This project is independent and not endorsed by NASA.
+
+## License
+
+Add a license before making the repository public (e.g. MIT). Note that NASA media has its own usage guidelines.
